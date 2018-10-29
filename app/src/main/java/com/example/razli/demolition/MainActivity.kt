@@ -11,5 +11,6 @@ class MainActivity : AppCompatActivity() {
 
         // 29 Oct
         // Can I push to master now?
+        // Test push 2
     }
 }
