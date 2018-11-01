@@ -20,7 +20,8 @@ public class HomeActivity extends AppCompatActivity {
 
         // TODO continue from this link: https://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/
 
-        Disposable disposable = Observable.just("Chaining statements!")
-                .subscribe(s -> textView.setText("Got: " + s));
+        Disposable disposable = Observable.just("Hello me!")
+                .map(s -> s + " - Raz")
+                .subscribe(s -> textView.setText(s));
     }
 }
