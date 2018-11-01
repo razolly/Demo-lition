@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import io.reactivex.Observable;
-import io.reactivex.functions.Consumer;
+import io.reactivex.disposables.Disposable;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -18,15 +18,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textview);
 
-        Observable<String> observable = Observable.just("Reactive extensions is cool!");
+        // TODO continue from this link: https://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/
 
-        Consumer<String> onNextAction = new Consumer<String>() {
-            @Override
-            public void accept(String s) throws Exception {
-                textView.setText("Received: " + s);
-            }
-        };
-
-        observable.subscribe(onNextAction);
+        Disposable disposable = Observable.just("Chaining statements!")
+                .subscribe(s -> textView.setText("Got: " + s));
     }
 }
